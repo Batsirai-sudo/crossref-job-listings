@@ -38,3 +38,7 @@ that application can be scalable by reusing the services in multiple places.
 
 3. Which parts did you spend the most time with? What did you find most difficult?
 
+They are 2 places where i did spent time which is 
+  1) Structuring the interface for the JobInterface object which the API was bringing. I had to make sure that i go through each and every object that  was bringing and make sure i got the correct name for the object property otherwise the the property name is wrong the application wolud break
+  2) I also spent more time in implementing the Redux state management. In particular when i wanted to access the state management using the select method of the store it was giving me the Observer back instead of the actual data that am selecting. So i had to access it through the subscribe method
+
