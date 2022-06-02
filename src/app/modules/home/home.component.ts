@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
      .subscribe((jobList: APIResponse<JobInterface>) => {
          const jobs:any = jobList.message.items;
          this.store.dispatch(JobActionService.retrieveJobs({jobs}))
-         console.log(jobs  )
+
          this.pagination = generatePagenation(jobList.message['total-results'],this.active_pagination )
          this.store.dispatch(JobActionService.loading({isLoading:false}))
 
