@@ -1,0 +1,21 @@
+.job-loader{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+
+    &--right{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .job-loader{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+
+        &--right{  
+            display: block;
+        }
+    }
+}

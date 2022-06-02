@@ -1,0 +1,138 @@
+.job-list{
+    margin-top:5rem;
+
+    &__item{
+        border:1px solid #ccc;
+        margin:10px;
+        padding: 20px;
+        border-radius:10px;
+        cursor: pointer; 
+        position: relative; 
+        
+        &:hover{
+            border:1px solid blue;
+        }
+    }  
+
+    &__date{
+        position: absolute;
+        right: 9px;
+        bottom: 14px;
+    }
+
+    &__subject{
+        display: inline-flex;
+        background: #f3f2f1;
+        border-radius: 0.25rem;
+        align-items: center; 
+        font-weight: 700;
+        color: #595959;
+        padding: 0.1875rem 0.5rem;
+        margin-right: 0.25rem;
+        margin-left: 0.25rem;
+    }
+
+    &__arrows{
+        cursor: pointer;
+       } 
+
+    &__wrapper{
+        display: block;
+    }
+
+    &--right{
+       display:none;
+    } 
+
+    &__bold{
+        font-weight: 900;
+    
+    }
+
+    &__details{
+        position: sticky!important;
+        top: 6.6rem;
+        border:1px solid #ccc;
+        padding: 20px;
+        border-radius:10px;
+    }
+
+    &__links{
+        font-weight: 900;
+        color: #3f51b5;
+        margin-top:10px;
+        position: relative;
+        top: 12px;
+    }
+
+    &__pagination{
+        display: flex; 
+        padding-inline: 5px;
+        margin: 10px;
+        width: 85vw;
+        align-items: center;  
+        overflow: scroll;
+        border-radius: 0.6rem;
+        background: #ffffff;
+        box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+              
+        &-item{
+            margin: 6px;
+            padding-inline: 12px;
+            border-radius: 5px;
+            color: #000;
+            cursor: pointer;
+   
+            &:hover{
+              background: #3f51b5;
+              color: #fff; 
+            }
+        }
+        &-dots{
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            justify-content: center;
+            position: relative;
+            top: -8px;
+        }
+
+        &--active{
+            background: #3f51b5;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        &__desktop--links{
+            display: block;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+
+    .job-list{
+ 
+        &__wrapper{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 20px; 
+        }
+    
+        &--right{
+            display:block;
+        } 
+
+        &__pagination{
+            overflow: unset;
+            margin: 2rem;
+            width: max-content;
+        } 
+
+        &__desktop--links{
+            display: none;
+        }
+    }
+
+    
+}

@@ -1,0 +1,61 @@
+ <div class="job-list">
+  
+  <app-job-loader *ngIf="isLoading"></app-job-loader>
+
+  <div  *ngIf="!isLoading" class="job-list__wrapper">
+    <div>
+      <div (click)="onClickJob(job)" class="job-list__item" *ngFor="let job  of jobs"> 
+        <div>  
+          <h1>{{job['container-title']}}</h1> 
+          <p><span class="job-list__bold">Subject</span>   <span class="job-list__subject">{{job.subject}}</span></p>
+          <p>{{job.title}}</p> 
+          <p class="job-list__subject job-list__date">{{job.created['date-time']}}</p> 
+          <p>{{job.publisher}}</p> 
+
+          <a class="job-list__links job-list__desktop--links" target="_blank" href="{{job.URL}}">
+            <span>  
+              Learn More
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2Zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292Z"/></svg>
+          </a>
+
+        </div>   
+      </div>  
+    </div>
+  
+    <div class="job-list--right">
+      <div  class="job-list__details"> 
+        <div *ngIf="jobDetails">
+          <h1 class="job-list__title">{{jobDetails['container-title']}}</h1> 
+          <p><span class="job-list__subject">Subject</span>   <span  class="job-list__subject">{{jobDetails.subject}}</span></p>
+          <h1>Authors</h1>  
+          <div  *ngFor="let author of jobDetails.author">
+            <p>{{author.given}}  {{author.family}}</p>
+          </div>   
+         
+          <p class="job-list__date">Created at : <span class="job-list__subject">{{jobDetails.created['date-time']}}</span></p>
+          <p>{{jobDetails.publisher}}</p>  
+          <p>{{jobDetails.type}}</p>
+          <a class="job-list__links" target="_blank" href="{{jobDetails.URL}}">
+            <span> 
+              Learn More
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2Zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292Z"/></svg>
+          </a>
+        </div>  
+      </div> 
+    </div>
+  </div> 
+
+  <div *ngIf="!isLoading" class="job-list__pagination">  
+    <svg class="job-list__arrows" (click)="paginationBack()"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="currentColor" d="M689 165.1L308.2 493.5c-10.9 9.4-10.9 27.5 0 37L689 858.9c14.2 12.2 35 1.2 35-18.5V183.6c0-19.7-20.8-30.7-35-18.5z"/></svg>
+    <div  *ngFor="let item of pagination">
+     <div (click)="onClickPaginationNumber(item)" [ngClass]="{'job-list__pagination--active':item === active_pagination}" *ngIf="item !== '.....'" class="job-list__pagination-item">
+      <p >{{item}}</p>
+     </div>  
+     <div  *ngIf="item === '.....'" class="job-list__pagination-dots">
+      <p >{{item}}</p>
+     </div>
+    </div>   
+    <svg class="job-list__arrows" (click)="paginationNext()" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="currentColor" d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"/></svg>  </div>
+</div>      

@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 300;
+    src:  url(./assets/fonts/Poppins-Light.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src:  url(./assets/fonts/Poppins-Regular.ttf) format('truetype');
+  } 
+   
+  @font-face {
+    font-family: 'Poppins';  
+    font-weight: 500;
+    src:  url(./assets/fonts/Poppins-Medium.ttf) format('truetype');
+  }
+   
+  @font-face { 
+    font-family: 'Poppins'; 
+    font-weight: 700; 
+    src:  url(./assets/fonts/Poppins-Bold.ttf) format('truetype');
+  }
+
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family:'Poppins', sans-serif;
+} 
+p{
+    padding-bottom: 0;
+    margin-bottom: 0!important; 
+    font-size: 12px;
+
+}
+.container{
+    padding: 15px;
+    margin: auto; 
+}
+
+.mat-form-field-infix{
+    padding: 0.5em 0 0.5em 0!important; 
+}
+
+.mat-form-field-label-wrapper {
+    top: -18px;
+} 
+ 
+.mat-form-field, .mat-form-field-wrapper{
+    padding: 5px !important;
+}
+ 
+@media screen and (min-width: 1200px) {
+    .container{
+        width: 1050px;   
+    }
+}

@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="header__container">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="header__wrapper">
+            <p class="header__title">Find Jobs!</p>    
+            <mat-form-field class="header__search" appearance="outline">
+                <mat-label>Search for Jobs</mat-label>
+                <input name="search" ngModel matInput placeholder="Start typing here">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            <button  class="header__button" color="primary">Search</button>
+        </form>    
+    </div>
+</div>   
